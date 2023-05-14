@@ -14,7 +14,10 @@ app = Flask(__name__)
 # Définition des routes
 @app.route('/')
 def index():
-    return render_template('main.html')
+    moyenne_humidite = cur.execute("SELECT AVG(humidite) FROM mesures").fetchone()[0]
+    moyenne_temperature = cur.execute("SELECT AVG(temperature) FROM mesures").fetchone()[0]
+    moyenne_force_vent = cur.execute("SELECT AVG(force_vent) FROM mesures").fetchone()[0]
+    return render_template('main.html',moyenne_humidite=moyenne_humidite,moyenne_temperature=moyenne_temperature,moyenne_force_vent=moyenne_force_vent)
 
 # Route /humidite
 @app.route('/humidite')

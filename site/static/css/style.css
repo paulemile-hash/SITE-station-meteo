@@ -1,12 +1,14 @@
 body {
-    background-color: green;
+    background-color: rgba(248, 238, 238, 0.877);
     font-size: 24px;
     color: white;
 }
+
 h1 {
     text-align: center;
     font-size: 48px;
 }
+
 #database-output {
     margin-top: 20px;
     padding: 10px;
@@ -14,10 +16,33 @@ h1 {
     color: black;
 }
 
-#compteurs{
+#compteurs {
     display: flex;
-    justify-content:  space-around;
-    background-color: lightgrey;
-      
+    justify-content: space-around;
+    
+    color: black;
+
 }
 
+.moyenne {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+
+}
+
+.moyenne a {
+    text-decoration: none;
+    color: black;
+}
+p{
+    color: black;
+
+}
+a{
+    color: black;
+}
+
+h1{
+    color: black;
+}
