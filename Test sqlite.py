@@ -16,3 +16,4 @@ cur = db.cursor()
 lecture("data.txt")
 db.commit()
 db.close()
+#coucou
