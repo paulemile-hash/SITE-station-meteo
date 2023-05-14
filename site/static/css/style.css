@@ -2,6 +2,9 @@ body {
     background-color: rgba(248, 238, 238, 0.877);
     font-size: 24px;
     color: white;
+    flex-direction: column;
+    margin: 0;
+
 }
 
 h1 {
@@ -19,15 +22,40 @@ h1 {
 #compteurs {
     display: flex;
     justify-content: space-around;
-    
+
     color: black;
 
 }
 
 .moyenne {
+    margin-top: 10px;
     display: flex;
     text-align: center;
     flex-direction: column;
+
+}
+
+#photo {
+    background-color: black;
+    justify-content: center;
+    display: block;
+    height: 150px;
+
+    margin: 0;
+
+}
+
+img {
+    display:block;
+    height: 100%;
+    width: 100%;
+  }
+
+#navbar {
+    background-color: grey;
+    display: block;
+    height: 150px;
+    margin: 0;
 
 }
 
@@ -35,14 +63,16 @@ h1 {
     text-decoration: none;
     color: black;
 }
-p{
+
+p {
     color: black;
 
 }
-a{
+
+a {
     color: black;
 }
 
-h1{
+h1 {
     color: black;
 }

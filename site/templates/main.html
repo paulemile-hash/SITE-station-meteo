@@ -7,10 +7,17 @@
     <meta name="viewport" content="width=1920, initial-scale=1.0">
     <link href="../static/css/style.css" rel="stylesheet">
     <title>Accueil - Fotia</title>
+    <link rel="icon" href="../static/illu-02.png" />
     <script src="https://bernii.github.io/gauge.js/dist/gauge.min.js"></script>
 </head>
 
 <body>
+    <div id="photo">
+        <img src="../static/header.jpg">
+    </div>
+    <div id="navbar">
+
+    </div>
 
     <div id="compteurs">
         <div class="moyenne">
@@ -54,21 +61,21 @@
         var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
         gauge.maxValue = 200; // set max gauge value
         gauge.setMinValue(0);  // Prefer setter over gauge.minValue = 0
-        gauge.animationSpeed = 32; // set animation speed (32 is default value)
+        gauge.animationSpeed = 75; // set animation speed (32 is default value)
         gauge.set({{ moyenne_force_vent }}); // set actual value
 
         var target = document.getElementById('gauge_temp'); // your canvas element
         var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
         gauge.maxValue = 50; // set max gauge value
         gauge.setMinValue(0);  // Prefer setter over gauge.minValue = 0
-        gauge.animationSpeed = 32; // set animation speed (32 is default value)
+        gauge.animationSpeed = 75; // set animation speed (32 is default value)
         gauge.set({{ moyenne_temperature }}); // set actual value
 
         var target = document.getElementById('gauge_hum'); // your canvas element
         var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
         gauge.maxValue = 100; // set max gauge value
         gauge.setMinValue(0);  // Prefer setter over gauge.minValue = 0
-        gauge.animationSpeed = 32; // set animation speed (32 is default value)
+        gauge.animationSpeed = 75; // set animation speed (32 is default value)
         gauge.set({{ moyenne_humidite }}); // set actual value
     </script>
 </body>
