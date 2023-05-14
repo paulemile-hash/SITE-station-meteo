@@ -18,19 +18,23 @@ def index():
 def humidity():
     data_humidite = cur.execute("SELECT time,humidite FROM mesures").fetchall()
     data = [[x[0], x[1]] for x in data_humidite]
-    return render_template('humidite.html', data_humidite=data, title="Humidité")
+    moyenne_humidite = cur.execute("SELECT AVG(humidite) FROM mesures").fetchone()[0]
+    return render_template('humidite.html', data=data, moyenne_humidite=moyenne_humidite, title="Humidité")
 
 @app.route('/temperature')
 def temperature():
     data_temperature = cur.execute("SELECT time,temperature FROM mesures").fetchall()
     data = [[x[0], x[1]] for x in data_temperature]
-    return render_template('temperature.html', data_temperature=data, title="Température")
+    moyenne_temperature = cur.execute("SELECT AVG(temperature) FROM mesures").fetchone()[0]
+    return render_template('temperature.html', data=data, moyenne_temperature=moyenne_temperature, title="Température")
 
 @app.route('/vent')
 def vent():
     data_vent = cur.execute("SELECT time,force_vent, direction_vent FROM mesures").fetchall()
     data = [[x[0], x[1], x[2]] for x in data_vent]
-    return render_template('vent.html', data_vent=data, title="Vent")
+    moyenne_force_vent = cur.execute("SELECT AVG(force_vent) FROM mesures").fetchone()[0]
+    moyenne_direction_vent = cur.execute("SELECT AVG(direction_vent) FROM mesures").fetchone()[0]
+    return render_template('vent.html', data=data, moyenne_force_vent=moyenne_force_vent, moyenne_direction_vent=moyenne_direction_vent, title="Vent")
 
 
 app.run(debug=True)
