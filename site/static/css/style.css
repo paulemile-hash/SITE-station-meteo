@@ -14,6 +14,10 @@ h1 {
     color: black;
 }
 
-#compt{
-display: flex;
+#compteurs{
+    display: flex;
+    justify-content:  space-around;
+    background-color: lightgrey;
+      
 }
+
