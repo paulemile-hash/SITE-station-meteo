@@ -4,21 +4,20 @@
 
 {% block content %}
 
-<div id="compteurs">
-    <div class="moyenne">
-        <a href="/temperature">Température:</a>
-        <a href="/temperature">{{ moyenne_temperature }}</a>
+<div id="gauge">
+    <div id="gauge_top">
         <a href="/temperature"><canvas id="gauge_temp"></canvas></a>
+        <p class="gauge-label">Température : <span id="temperture_value">{{ moyenne_temperature }}°C</span></p>
+        
     </div>
-    <div class="moyenne">
-        <a href="/vent">Vent:</a>
-        <a href="/vent">{{ moyenne_force_vent }}</a>
+    <div id="gauge_bottom">
+
         <a href="/vent"> <canvas id="gauge_vent"></canvas></a>
+        <p class="gauge-label">Vitesse du vent : <span id="wind_value">{{ moyenne_force_vent }}km/h</span></p>
     </div>
-    <div class="moyenne">
-        <a href="/humidite">Humidité:</a>
-        <a href="/humidite">{{ moyenne_humidite }}</a>
+    <div id="gauge_top">
         <a href="/humidite"><canvas id="gauge_hum"></canvas></a>
+        <p href="/humidite" class="gauge-label">Humidité <span id="humidity_value">{{ moyenne_humidite }}%</span></p>
     </div>
 
 </div>

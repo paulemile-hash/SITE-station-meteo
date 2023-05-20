@@ -19,13 +19,24 @@ h1 {
     color: black;
 }
 
-#compteurs {
+#gauge {
     display: flex;
     justify-content: space-around;
 
-    color: black;
-
 }
+
+#gauge_top{
+    margin-top: 150px;
+}
+
+#gauge_bottom{
+    margin-top: 50px;
+}
+
+.gauge-label {
+    text-align: center;
+}
+
 
 .moyenne {
     margin-top: 10px;
