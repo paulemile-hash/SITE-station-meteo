@@ -1,22 +1,14 @@
-<!DOCTYPE html>
-<html lang="fr">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=1920, initial-scale=1.0">
-    <link href="../static/css/style.css" rel="stylesheet">
-    <title>Température - Fotia</title>
-</head>
+{% block title %}Température - Fotia{% endblock title %}
 
-<body>
-    <div>
-        <a href="/">Home</a>
-    </div>
-    
-    <h1>{{ title }}</h1>
-    <p>data: {{ data }}</p>
-    <p>moyenne_temperature: {{ moyenne_temperature }}</p>
-</body>
+{% block content %}
 
-</html>
+<div>
+    <a href="/">Home</a>
+</div>
+
+<h1>{{ title }}</h1>
+<p>data: {{ data }}</p>
+<p>moyenne_temperature: {{ moyenne_temperature }}</p>
+{% endblock content %}

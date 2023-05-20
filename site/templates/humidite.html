@@ -1,23 +1,14 @@
-<!DOCTYPE html>
-<html lang="fr">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=1920, initial-scale=1.0">
-    <link href="../static/css/style.css" rel="stylesheet">
-    
-    <title>Humidité - Fotia</title>
-</head>
+{% block title %}Humidité - Fotia{% endblock title %}
 
-<body>
-    <div>
-        <a href="/">Home</a>
-    </div>
+{% block content %}
 
-    <h1>{{ title }}</h1>
-    <p>data: {{ data }}</p>
-    <p>moyenne_humidite: {{ moyenne_humidite }}</p>
-</body>
+<div>
+    <a href="/">Home</a>
+</div>
 
-</html>
+<h1>{{ title }}</h1>
+<p>data: {{ data }}</p>
+<p>moyenne_humidite: {{ moyenne_humidite }}</p>
+{% endblock content %}
