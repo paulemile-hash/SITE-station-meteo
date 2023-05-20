@@ -1,5 +1,3 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -12,23 +10,27 @@
     <link rel="icon" type="image/png" href="../assets/illu-02.png" />
     <link href="../site/static/css/style.css" rel="stylesheet">
     <!-- title -->
-    <title>{% block full_title %}{% block title %}{% endblock %} - Fotia{% endblock %}</title>
+    <title>{% block title %}{% endblock title %} - Fotia</title>
 
     {% block head %} {% endblock head %}
 </head>
 
-{% block body %}
-
+<header>
     {% block header %}
         {% include "header.html" %}
     {% endblock header %}
+</header>
 
+<body>
+{% block body %}
+    {% block content %}{% endblock content %}
+{% endblock body %}
+</body>
 
+<footer>
     {% block footer %}
         {% include "footer.html" %}
     {% endblock footer %}
-
-    </body>
-{% endblock body %}
+</footer>
 
 </html>
