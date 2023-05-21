@@ -68,21 +68,37 @@ img {
     width: 100%;
 }
 
-#navbar {
-    background-color: grey;
-    display: flex;
-    height: 256px;
+.navbar {
+    background-color: white ;
+    height: 56px;
     margin: 0;
-    justify-content: space-around;
+    
 
 }
-#navbar a{
+
+.navbar a{
     text-decoration: none;
+    
+}
+.navbar-item.has-dropdown {
+    padding: 0;
 }
 
-.item_navbar {
-    flex-grow: 0;
-    flex-shrink: 0;
+.navbar-link, a.navbar-item {
+    cursor: pointer;
+}
+
+.navbar-brand{
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar-item, .navbar-link {
+    color: #4a4a4a;
+    display: block;
+    line-height: 1.5;
+    padding: 0.5rem 0.75rem;
+    position: relative;
 }
 
 .moyenne a {
