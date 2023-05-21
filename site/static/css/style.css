@@ -123,3 +123,12 @@ h1 {
 strong{
     color: black;
 }
+
+#references{
+    font-size: 15pt;
+}
+
+#parametres{
+    font-size: 10pt;
+    line-height: 1pt;
+}
