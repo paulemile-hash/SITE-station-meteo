@@ -25,11 +25,11 @@ h1 {
 
 }
 
-#gauge_top{
+#gauge_top {
     margin-top: 50px;
 }
 
-#gauge_bottom{
+#gauge_bottom {
     margin-top: 150px;
 }
 
@@ -69,38 +69,32 @@ img {
 }
 
 .navbar {
-    background-color: white ;
+    background-color: grey;
     height: 56px;
     margin: 0;
-    
+    display: flex;
+
 
 }
 
-.navbar a{
+.navbar a {
     text-decoration: none;
-    
-}
-.navbar-item.has-dropdown {
-    padding: 0;
 }
 
-.navbar-link, a.navbar-item {
-    cursor: pointer;
+.navbar-brand {
+    display: flex;
+    flex-grow: 0;
+    margin: auto;
+    margin-left: 10px;
 }
 
-.navbar-brand{
+.navbar-end {
     display: flex;
     justify-content: space-around;
+    flex-grow: 3;
+    margin: auto;
+    
 }
-
-.navbar-item, .navbar-link {
-    color: #4a4a4a;
-    display: block;
-    line-height: 1.5;
-    padding: 0.5rem 0.75rem;
-    position: relative;
-}
-
 .moyenne a {
     text-decoration: none;
     color: black;
@@ -119,17 +113,11 @@ h1 {
     color: black;
 }
 
-.footer{
+.footer {
     text-align: center;
-    
+
 }
-#references{
-    font-size: 15pt;
-}
+
 strong{
     color: black;
-}
-#parametres{
-    font-size: 10pt;
-    line-height: 1pt;
 }
