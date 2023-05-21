@@ -26,11 +26,11 @@ h1 {
 }
 
 #gauge_top{
-    margin-top: 150px;
+    margin-top: 50px;
 }
 
 #gauge_bottom{
-    margin-top: 50px;
+    margin-top: 150px;
 }
 
 .gauge-label {
@@ -70,10 +70,19 @@ img {
 
 #navbar {
     background-color: grey;
-    display: block;
-    height: 150px;
+    display: flex;
+    height: 256px;
     margin: 0;
+    justify-content: space-around;
 
+}
+#navbar a{
+    text-decoration: none;
+}
+
+.item_navbar {
+    flex-grow: 0;
+    flex-shrink: 0;
 }
 
 .moyenne a {
@@ -92,4 +101,9 @@ a {
 
 h1 {
     color: black;
+}
+
+.footer{
+    text-align: center;
+    
 }
