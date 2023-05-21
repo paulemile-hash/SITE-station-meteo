@@ -6,12 +6,15 @@ name_db = "data/test1.db"
 
 db = sqlite3.connect(name_db, check_same_thread=False)
 cur = db.cursor()
+#si la mesures exiqye pas on crée une table 
 cur.execute("CREATE TABLE IF NOT EXISTS mesures(time INTEGER,temperature FLOAT, humidite FLOAT, force_vent FLOAT, direction_vent FLOAT)") # création de la table si elle existe pas
 
 # Création de l'application Flask
 app = Flask(__name__)
 
 # Définition des routes
+#lier bases de données au sites 
+#AVG = moyenne
 @app.route('/')
 def index():
     moyenne_humidite = cur.execute("SELECT AVG(humidite) FROM mesures").fetchone()[0]

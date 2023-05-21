@@ -107,3 +107,13 @@ h1 {
     text-align: center;
     
 }
+#references{
+    font-size: 15pt;
+}
+strong{
+    color: black;
+}
+#parametres{
+    font-size: 10pt;
+    line-height: 1pt;
+}
