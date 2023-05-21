@@ -85,9 +85,11 @@ img {
     display: flex;
     flex-grow: 0;
     margin: auto;
+    
+}
+.navbar-start{
     margin-left: 10px;
 }
-
 .navbar-end {
     display: flex;
     justify-content: space-around;
