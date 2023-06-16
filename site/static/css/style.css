@@ -125,10 +125,13 @@ strong{
 }
 
 #references{
+    margin-left: 10px;
+    margin-bottom: 0px;
     font-size: 15pt;
 }
 
-#parametres{
+#references a{
+
     font-size: 10pt;
     line-height: 1pt;
 }
