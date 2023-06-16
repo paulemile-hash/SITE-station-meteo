@@ -20,7 +20,7 @@ time.sleep(1)
 
 db = sqlite3.connect(name_db)
 cur = db.cursor()
-cur.execute("CREATE TABLE IF NOT EXISTS mesures(time FLOAT,temperature FLOAT, humidite FLOAT, force_vent FLOAT, direction_vent FLOAT)") # création de la table si elle existe pas
+cur.execute("CREATE TABLE IF NOT EXISTS mesures(time FLOAT,temperature FLOAT, humidite FLOAT, force_vent FLOAT, direction_vent)") # création de la table si elle existe pas
 
 
 while True:

@@ -50,9 +50,8 @@ def vent():
     data = [[x[0], x[1], x[2]] for x in data_vent]
     # Calcul de la moyenne de force et direction du vent
     moyenne_force_vent = cur.execute("SELECT AVG(force_vent) FROM mesures").fetchone()[0]
-    moyenne_direction_vent = cur.execute("SELECT AVG(direction_vent) FROM mesures").fetchone()[0]
     # Renvoie du template vent.html avec les données
-    return render_template('vent.html', data=data, moyenne_force_vent=moyenne_force_vent, moyenne_direction_vent=moyenne_direction_vent, title="Vent")
+    return render_template('vent.html', data=data, moyenne_force_vent=moyenne_force_vent,title="Vent")
 
 
 app.run(debug=True)
