@@ -1,74 +1,60 @@
 #include <DHT.h>
-
-#define DHTPIN 2          // Définition du pin de données connecté au capteur DHT22
+#define DHTPIN 2          // Définition du pin de données du DHT22
 #define DHTTYPE DHT22     // Définition du type de capteur
 DHT dht(DHTPIN, DHTTYPE);  // Initialisation du capteur DHT22
 
 String old_wd;  // Déclaration de la variable old_wd
 
-const int anemometerPin = A2;  // Broche analogique pour lire la valeur de l'anémomètre
-const float radius = 0.000711;  // Rayon de l'anémomètre en mètres
-const unsigned long measurementDuration = 5000;  // Durée de la mesure en millisecondes
+const int anemometerPin = A2;  // Broche analogique de l'anémomètre
+const float radius = 0.0711;  // Rayon de l'anémomètre en mètres
+const unsigned long measurementDuration = 1000;  // Durée de la mesure en millisecondes
 
 unsigned long startTime;  // Temps de début de la mesure
-unsigned long elapsedTime;  // Temps écoulé depuis le début de la mesure
+unsigned long elapsedTime;  // Temps depuis le début de la mesure
 unsigned int pulseCount = 0;  // Compteur de pulsations
 
 float windSpeed = 0;  // Vitesse du vent en m/s
 
   void setup() {
-  Serial.begin(9600);     // Configuration de la vitesse de communication série
+  Serial.begin(9600);     // Vitesse de communication de l'Arduino
   dht.begin();            // Initialisation du capteur DHT22
-  analogRead(A1);
+  analogRead(A1);         // Port analogique 
 }
 
   void loop() {
-  delay(2000);            // Attente de 2 secondes pour que le capteur DHT22 se stabilise
+  //delay(2000);            // Stabilisation du capteurs en 2s
 
   float temperature = dht.readTemperature();   // Lecture de la température en degrés Celsius
   float humidity = dht.readHumidity();         // Lecture de l'humidité relative en pourcentage
-
-  // Affichage des données du capteur DHT22 sur le moniteur série
  
-
   // CALCULE DE WIND DIRECTION
-  delay(500);
+  //delay(500);
   
   int sensorValue = analogRead(A1);
-  float dirvent = sensorValue / 3.3 ;
+  float dirvent = sensorValue ;
   String wd = "other";
   
-  if (dirvent > 8 && dirvent < 14) {
-    wd = "W";
+  if (dirvent > 90 && dirvent < 460) {
+    wd = "E";
   }
-  if (dirvent > 17 && dirvent < 23) {
-    wd = "NW";
-  }
-  if (dirvent > 28 && dirvent < 35) {
+  if (dirvent > 790 && dirvent < 890) {
     wd = "N";
   }
-  if (dirvent > 56 && dirvent < 62) {
-    wd = "SW";
+  if (dirvent > 400 && dirvent < 459) {
+    wd = "N";
   }
-  if (dirvent > 91 && dirvent < 99) {
-    wd = "NE";
-  }
-  if (dirvent > 124 && dirvent < 154) {
+  if (dirvent > 635 && dirvent < 790) {
+    wd = "W";
+  }   
+  if (dirvent > 180 && dirvent < 635) {
     wd = "S";
   }
-  if (dirvent > 188 && dirvent < 201) {
-    wd = "SE";
-  }
-  if (dirvent > 224 && dirvent < 240) {
-    wd = "E";
-  }    
 
   if (wd == "other") {
     wd = old_wd;
   } else {
     old_wd = wd;
   }
-  // AFFICHAGE WIND DIRECTION
   
  // CALCUL DE windSpeedKmh
   startTime = millis();  // Début de la mesure
@@ -87,7 +73,7 @@ float windSpeed = 0;  // Vitesse du vent en m/s
   }
 
   // Calcul de la vitesse du vent en m/s
-  windSpeed = (3.14 * radius * pulseCount) / (measurementDuration / 1000.0);
+  windSpeed = (3.14 * radius * pulseCount) / (measurementDuration);
 
   // Conversion en km/h
   float windSpeedKmh = windSpeed * 3.6;
