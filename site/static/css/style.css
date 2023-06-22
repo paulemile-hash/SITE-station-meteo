@@ -88,7 +88,9 @@ img {
     
 }
 .navbar-start{
-    margin-left: 10px;
+    display:flex;
+    margin:auto;
+    flex-grow: 0;
 }
 .navbar-end {
     display: flex;
