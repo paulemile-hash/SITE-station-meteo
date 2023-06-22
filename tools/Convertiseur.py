@@ -2,7 +2,7 @@ import serial
 
 port = 'COM7'
 baud_rate = 9600
-output_file = 'data.txt'
+output_file = 'data/data.txt'
 
 try:
     ser = serial.Serial(port, baud_rate)
