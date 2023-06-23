@@ -5,8 +5,6 @@ import time
 port = 'COM7'
 baud_rate = 9600
 output_file = 'data/data.txt'
-cpt=0
-
 
 try:
     ser = serial.Serial(port, baud_rate)
