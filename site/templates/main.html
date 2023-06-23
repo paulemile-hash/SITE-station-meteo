@@ -3,6 +3,13 @@
 {% block title %}Accueil - Fotia{% endblock title %}
 
 {% block content %}
+<div id="etat">
+    {% if (moyenne_temperature < 30) and (moyenne_force_vent < 30) and (moyenne_humidite > 50) %}
+    <p>c'est bon</p>
+    {% else %}
+    <p>c'est pas bon</p>
+    {% endif %}
+</div>
 
 <div id="gauge">
     <div id="gauge_top">

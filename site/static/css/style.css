@@ -137,3 +137,9 @@ strong{
     font-size: 10pt;
     line-height: 1pt;
 }
+
+#etat{
+    height: 75px;
+    display: flex;
+    justify-content: space-around;
+}
