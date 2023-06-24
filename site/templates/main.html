@@ -4,7 +4,7 @@
 
 {% block content %}
 <div id="etat">
-    {% if (moyenne_temperature < 30) and (moyenne_force_vent < 30) and (moyenne_humidite > 50) %}
+    {% if (moyenne_temperature < 30) and (moyenne_force_vent < 30) and (moyenne_humidite < 40) %}
     <p>c'est bon</p>
     {% else %}
     <p>c'est pas bon</p>
