@@ -4,19 +4,21 @@
 
 {% block content %}
 <div id="etat">
-    {% if (moyenne_temperature < 30) and (moyenne_force_vent < 30) and (moyenne_humidite > 40) %}
-    <img src="{{logo_ok}}" alt="logo_ok"/>
-    
-    {% else %}
-    <img src="{{logo_attention}}" alt="logo_attention">
-    {% endif %}
+    {% if (moyenne_temperature < 30) and (moyenne_force_vent < 30) and (moyenne_humidite> 40) %}
+        <img src="{{ url_for('static', filename='img_logo/logo_ok.png') }}" alt="logo ok" />
+        <p>Tout va bien</p>
+
+        {% else %}
+        <img src="{{ url_for('static', filename='img_logo/logo_attention.png') }}" alt="logo attention">
+        <p>C'est la merde</p>
+        {% endif %}
 </div>
 
 <div id="gauge">
     <div id="gauge_top">
         <a href="/temperature"><canvas id="gauge_temp"></canvas></a>
         <p class="gauge-label">Température : <span id="temperture_value">{{ moyenne_temperature }}°C</span></p>
-        
+
     </div>
     <div id="gauge_bottom">
 

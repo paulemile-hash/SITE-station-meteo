@@ -26,11 +26,11 @@ h1 {
 }
 
 #gauge_top {
-    margin-top: 50px;
+    margin-top: 0px;
 }
 
 #gauge_bottom {
-    margin-top: 150px;
+    margin-top: 100px;
 }
 
 .gauge-label {
@@ -80,20 +80,22 @@ h1 {
     display: flex;
     flex-grow: 0;
     margin: auto;
-    
+
 }
-.navbar-start{
-    display:flex;
-    margin:auto;
-    flex-grow: 0;
+
+.navbar-start {
+    margin-left: 25px;
+    margin-top: 14px;
 }
+
 .navbar-end {
     display: flex;
     justify-content: space-around;
     flex-grow: 3;
     margin: auto;
-    
+
 }
+
 .moyenne a {
     text-decoration: none;
     color: black;
@@ -117,32 +119,31 @@ h1 {
 
 }
 
-strong{
+strong {
     color: black;
 }
 
-#references{
+#references {
     margin-left: 10px;
     margin-bottom: 0px;
     font-size: 15pt;
 }
 
-#references a{
+#references a {
 
     font-size: 10pt;
     line-height: 1pt;
 }
 
-#etat{
-    height: 900px;
-    display: flex;
+#etat {
+    text-align: center;
     justify-content: space-around;
 }
 
-#etat img{  
+#etat img {
     justify-content: space-around;
-    height: 50%;
-    width: 50%;
+    height: 8%;
+    width: 8%;
     margin-top: 25px;
     color: black;
 }
