@@ -4,10 +4,11 @@
 
 {% block content %}
 <div id="etat">
-    {% if (moyenne_temperature < 30) and (moyenne_force_vent < 30) and (moyenne_humidite > 50) %}
-    <p>c'est bon</p>
+    {% if (moyenne_temperature < 30) and (moyenne_force_vent < 30) and (moyenne_humidite > 40) %}
+    <img src="{{logo_ok}}" alt="logo_ok"/>
+    
     {% else %}
-    <p>c'est pas bon</p>
+    <img src="{{logo_attention}}" alt="logo_attention">
     {% endif %}
 </div>
 

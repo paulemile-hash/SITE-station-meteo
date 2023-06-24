@@ -1,8 +1,13 @@
 from flask import Flask, render_template
 import sqlite3
+import os
 
 # Connexion à la base de données
 name_db = "data/test1.db"
+
+
+
+
 
 db = sqlite3.connect(name_db, check_same_thread=False)
 cur = db.cursor()
@@ -12,15 +17,25 @@ cur.execute("CREATE TABLE IF NOT EXISTS mesures(time INTEGER,temperature FLOAT, 
 # Création de l'application Flask
 app = Flask(__name__)
 
+
+
+
 # Définition des routes
 #lier bases de données au sites 
 #AVG = moyenne
 @app.route('/')
 def index():
+    
+    image_folder = 'site\static\img_logo'
+    chemin_ok = 'logo_ok.jpg'  # Nom de votre image
+    logo_ok = os.path.join(image_folder, chemin_ok)
+    chemin_attention = 'logo-attention.png'
+    logo_attention =  os.path.join(image_folder, chemin_attention)
+
     moyenne_humidite = cur.execute("SELECT AVG(humidite) FROM mesures").fetchone()[0]
     moyenne_temperature = cur.execute("SELECT AVG(temperature) FROM mesures").fetchone()[0]
     moyenne_force_vent = cur.execute("SELECT AVG(force_vent) FROM mesures").fetchone()[0]
-    return render_template('main.html',moyenne_humidite=round(moyenne_humidite,1),moyenne_temperature=round(moyenne_temperature,1),moyenne_force_vent=round(moyenne_force_vent,1))
+    return render_template('main.html',moyenne_humidite=round(moyenne_humidite,1),moyenne_temperature=round(moyenne_temperature,1),moyenne_force_vent=round(moyenne_force_vent,1), logo_ok=logo_ok,logo_attention=logo_attention)
 
 # Route /humidite
 @app.route('/humidite')

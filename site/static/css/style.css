@@ -62,11 +62,6 @@ h1 {
     font-family: 'Times New Roman', Times, serif;
 }
 
-img {
-    display: block;
-    height: 100%;
-    width: 100%;
-}
 
 .navbar {
     background-color: grey;
@@ -139,7 +134,15 @@ strong{
 }
 
 #etat{
-    height: 75px;
+    height: 900px;
     display: flex;
     justify-content: space-around;
+}
+
+#etat img{  
+    justify-content: space-around;
+    height: 50%;
+    width: 50%;
+    margin-top: 25px;
+    color: black;
 }
